@@ -7,7 +7,7 @@
         <dependent-module archiveName="sild-search-interface-dto-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sild-search-interface-dto/sild-search-interface-dto">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="context-root" value="flod-web"/>
         <property name="java-output-path" value="/flod-web/target/classes"/>
+        <property name="context-root" value="sild-search-web"/>
     </wb-module>
 </project-modules>

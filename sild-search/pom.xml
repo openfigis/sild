@@ -12,28 +12,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<slf4j.version>1.7.5</slf4j.version>
 		<weld.version>2.0.4.Final</weld.version>
-		<gwt.version>2.5.1</gwt.version>
 	</properties>
 
 	<modules>
 		<module>sild-search-web</module>
-		<module>sild-search-web-importwizard</module>
-		<module>sild-search-web-codelistmanager</module>
-		<module>sild-search-web-menu</module>
-		<module>sild-search-web-share</module>
-		<module>sild-search-web-publish</module>
 
-		<module>sild-common</module>
-		<module>sild-repository</module>
-		<module>sild-domain</module>
-		<module>sild-io</module>
-		<module>sild-openjpa</module>
-		<module>sild-lifecycle</module>
-		<module>sild-user</module>
-		<module>sild-engine</module>
-		<module>sild-security</module>
-		<module>sild-action</module>
 
+		<module>sild-search-client</module>
+		<module>sild-search-interface-dto</module>
 	</modules>
 
 	<repositories>
@@ -97,90 +83,7 @@
 
 			<!-- module dependencies -->
 
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-common</artifactId>
-				<version>${project.version}</version>
-			</dependency>
 
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-domain</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-io</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-user</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-engine</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-action</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-lifecycle</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-security</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-repository</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-search-web-share</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-search-web-menu</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-search-web-publish</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-search-web-codelistmanager</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.sild</groupId>
-				<artifactId>sild-search-web-importwizard</artifactId>
-				<version>${project.version}</version>
-			</dependency>
 
 
 			<!-- logging -->
@@ -215,28 +118,10 @@
 				<scope>runtime</scope>
 			</dependency>
 
-			<!-- GWT -->
 
-			<dependency>
-				<groupId>com.google.gwt</groupId>
-				<artifactId>gwt-servlet</artifactId>
-				<version>${gwt.version}</version>
-				<scope>runtime</scope>
-			</dependency>
 
-			<dependency>
-				<groupId>com.google.gwt</groupId>
-				<artifactId>gwt-user</artifactId>
-				<version>${gwt.version}</version>
-				<scope>provided</scope>
-			</dependency>
 
-			<dependency>
-				<groupId>com.google.gwt.inject</groupId>
-				<artifactId>gin</artifactId>
-				<version>2.0.0</version>
-				<scope>compile</scope>
-			</dependency>
+
 
 			<!-- testing -->
 
@@ -268,25 +153,24 @@
 				<version>2.1.1</version>
 				<scope>test</scope>
 			</dependency>
-
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+				<scope>test</scope>
+			</dependency>
 
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
 				<version>1.0.13</version>
 			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
+
 
 	</dependencies>
 
