@@ -15,11 +15,13 @@
 	</properties>
 
 	<modules>
-		<module>sild-search-web</module>
+	
 
 
 		<module>sild-search-client</module>
 		<module>sild-search-interface-dto</module>
+
+		<module>sild-search-web</module>
 	</modules>
 
 	<repositories>
