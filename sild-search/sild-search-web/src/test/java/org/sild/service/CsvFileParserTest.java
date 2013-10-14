@@ -5,8 +5,8 @@ import static org.junit.Assert.assertEquals;
 import java.net.URL;
 import java.util.Map;
 
+import org.fao.fi.sild.service.search.CsvFileParser;
 import org.junit.Test;
-import org.sild.service.CsvFileParser;
 
 public class CsvFileParserTest {
 

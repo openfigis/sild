@@ -1,4 +1,4 @@
-package org.sild.service;
+package org.fao.fi.sild.service.search;
 
 import java.io.IOException;
 import java.io.InputStream;

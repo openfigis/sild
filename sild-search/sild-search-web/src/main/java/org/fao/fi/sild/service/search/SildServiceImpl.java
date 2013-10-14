@@ -1,4 +1,4 @@
-package org.sild.service;
+package org.fao.fi.sild.service.search;
 
 import java.net.URL;
 import java.util.Map;

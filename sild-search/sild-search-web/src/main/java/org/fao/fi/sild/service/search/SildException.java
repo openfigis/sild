@@ -1,4 +1,4 @@
-package org.sild.service;
+package org.fao.fi.sild.service.search;
 
 /**
  * Generic sild runtime exception. sild so far does not have checked exceptions, the idea behind is that checked
