@@ -32,7 +32,7 @@ public class SearchClient implements SearchService {
 
 	@Override
 	public SearchResult search(AdvancedSearchRequest searchParameters) {
-		ClientResponse response = getBuilder().put(ClientResponse.class, searchParameters);
+		ClientResponse response = getBuilder().post(ClientResponse.class, searchParameters);
 		evaluateResponse(response);
 		return response.getEntity(SearchResult.class);
 	}
