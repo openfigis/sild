@@ -1,24 +1,22 @@
 package org.sild.service.test;
 
-import javax.inject.Inject;
-import org.sild.service.dto.FetchURIresponse;
-import org.sild.service.dto.SildService;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
+import javax.inject.Inject;
+
+import org.junit.Test;
+import org.sild.service.SearchService;
+import org.sild.service.response.SearchResult;
 
 public abstract class SildAbstractServiceTest {
 
-	private String URI = "http://www.fao.org/figis/sild/entities/codedentity/3ff3592a-a24e-4da9-9ba7-983c09355018";
-
 	@Inject
-	protected SildService sildService;
+	protected SearchService searchService;
 
 	@Test
 	public void testFetchLodUrl() {
-		String codeList = "asfis";
-		String code = "TUN";
-		FetchURIresponse response = sildService.fetchURI(codeList, code);
-		assertEquals(URI, response.getURI().toString());
+		String searchTerm = "asfis";
+		SearchResult response = searchService.search(searchTerm);
+		assertTrue(response.getFoundElementList().size() > 0);
 	}
 }
