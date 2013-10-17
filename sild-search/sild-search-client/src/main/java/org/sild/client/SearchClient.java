@@ -8,7 +8,7 @@ import org.sild.service.response.SearchResult;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource.Builder;
+import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
@@ -21,32 +21,39 @@ import com.sun.jersey.api.json.JSONConfiguration;
 public class SearchClient implements SearchService {
 
 	private static String SERVER = "http://localhost:8080/sild-search-web/rest/search";
+	private static String ADVANCEDSERVER = "http://localhost:8080/sild-search-web/rest/advancedsearch";
+	private static String SEARCH_TERM = "searchTerm";
+	private static String WORDINTITLE = "wordInTitle";
+	private static String AUTHORS = "authors";
+	private static String PUBLICATIONYEAR = "publicationYear";
+	private static String LANGUAGE = "language";
+	private static String SERIESTITLE = "seriesTitle";
 
 	@Override
 	public SearchResult search(String searchTerm) {
 
-		Builder builder = getBuilder();
-
-		ClientResponse response = getBuilder().get(ClientResponse.class);
+		ClientResponse response = getWebResource(SERVER).queryParam(SEARCH_TERM, searchTerm)
+				.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
 		evaluateResponse(response);
 		return response.getEntity(SearchResult.class);
 
 	}
 
 	@Override
-	public SearchResult search(AdvancedSearchRequest searchParameters) {
-		ClientResponse response = getBuilder().post(ClientResponse.class, searchParameters);
+	public SearchResult search(AdvancedSearchRequest sp) {
+		WebResource wr = getWebResource(ADVANCEDSERVER).queryParam(SEARCH_TERM, sp.getSearchTerm())
+				.queryParam(WORDINTITLE, sp.getWordInTitle()).queryParam(AUTHORS, sp.getAuthors())
+				.queryParam(PUBLICATIONYEAR, Integer.toString(sp.getPublicationYear()))
+				.queryParam(LANGUAGE, sp.getLanguage()).queryParam(SERIESTITLE, sp.getSeriesTitle());
+		ClientResponse response = wr.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
 		evaluateResponse(response);
 		return response.getEntity(SearchResult.class);
 	}
 
-	private Builder getBuilder() {
+	private WebResource getWebResource(String server) {
 		ClientConfig clientConfig = new DefaultClientConfig();
 		clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
-
-		// clientConfig.getFeatures().
-
-		return Client.create(clientConfig).resource(SERVER).accept(MediaType.APPLICATION_JSON);
+		return Client.create(clientConfig).resource(server);
 	}
 
 	private void evaluateResponse(ClientResponse response) {

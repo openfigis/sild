@@ -1,6 +1,6 @@
 package org.sild.service.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import javax.inject.Inject;
 
@@ -17,17 +17,21 @@ public abstract class SildAbstractServiceTest {
 
 	@Test
 	public void testSearch() {
-
 		SearchResult response = searchService.search(searchTerm);
-		assertTrue(response.getFoundElementList().size() > 0);
+		assertEquals(response.getFoundElementList().size(), 1);
 	}
 
 	@Test
 	public void testadvancedSearch() {
 		AdvancedSearchRequest r = new AdvancedSearchRequest();
 		r.setSearchTerm(searchTerm);
+		r.setAuthors("");
+		r.setLanguage("");
+		r.setPublicationYear(0);
+		r.setSeriesTitle("");
+		r.setWordInTitle("");
 		SearchResult response = searchService.search(r);
-		assertTrue(response.getFoundElementList().size() > 0);
+		assertEquals(2, response.getFoundElementList().size());
 	}
 
 }
