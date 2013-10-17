@@ -26,7 +26,6 @@ public class SearchClient implements SearchService {
 	public SearchResult search(String searchTerm) {
 
 		Builder builder = getBuilder();
-		builder.
 
 		ClientResponse response = getBuilder().get(ClientResponse.class);
 		evaluateResponse(response);
@@ -44,14 +43,9 @@ public class SearchClient implements SearchService {
 	private Builder getBuilder() {
 		ClientConfig clientConfig = new DefaultClientConfig();
 		clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
-		
-		clientConfig.getFeatures().
-		
-		
-		
-		
-		
-		
+
+		// clientConfig.getFeatures().
+
 		return Client.create(clientConfig).resource(SERVER).accept(MediaType.APPLICATION_JSON);
 	}
 
