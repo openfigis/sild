@@ -10,6 +10,7 @@ import org.sild.service.request.AdvancedSearchRequest;
 import org.sild.service.response.SearchResult;
 
 public abstract class SildAbstractServiceTest {
+
 	String searchTerm = "asfis";
 	@Inject
 	protected SearchService searchService;

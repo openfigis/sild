@@ -15,12 +15,8 @@
 	</properties>
 
 	<modules>
-	
-
-
 		<module>sild-search-client</module>
 		<module>sild-search-interface-dto</module>
-
 		<module>sild-search-web</module>
 	</modules>
 
@@ -99,10 +95,20 @@
 
 			<!-- CDI injection -->
 
+
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
+				<scope>compile</scope>
+			</dependency>
+
+
 			<dependency>
 				<groupId>javax.enterprise</groupId>
 				<artifactId>cdi-api</artifactId>
 				<version>1.1</version>
+				|
 				<scope>compile</scope>
 			</dependency>
 
@@ -174,6 +180,14 @@
 
 
 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

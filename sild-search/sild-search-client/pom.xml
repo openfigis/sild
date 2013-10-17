@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>sild-search-client</groupId>
 	<artifactId>sild-search-client</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -59,4 +58,9 @@
 			</plugin>
 		</plugins>
 	</build>
+	<parent>
+		<groupId>org.sild</groupId>
+		<artifactId>sild</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 </project>
