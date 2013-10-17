@@ -28,12 +28,15 @@ public class SildWs {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public SearchResult search(@QueryParam("searchTerm") String searchTerm) {
+		System.out.println("hitting SildWs search searchTerm!!!");
+
 		return service.search(searchTerm);
 	}
 
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	public SearchResult advancedSearch(AdvancedSearchRequest advancedSearchRequest) {
+		System.out.println("hitting SildWs search advancedSearchRequest!!!");
 		return service.search(advancedSearchRequest);
 	}
 

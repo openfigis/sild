@@ -55,8 +55,7 @@ public class SildServiceImpl implements SearchService {
 
 	@Override
 	public SearchResult search(AdvancedSearchRequest searchParameters) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.search(searchParameters.getSearchTerm());
 	}
 
 }

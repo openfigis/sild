@@ -7,11 +7,8 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
 			<scope>test</scope>
 		</dependency>
-
-
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
@@ -20,7 +17,6 @@
 		<dependency>
 			<groupId>org.jglue.cdi-unit</groupId>
 			<artifactId>cdi-unit</artifactId>
-			<version>2.0.7</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -44,6 +40,11 @@
 			<groupId>sild-search-interface-dto</groupId>
 			<artifactId>sild-search-interface-dto</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.weld.se</groupId>
+			<artifactId>weld-se</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>

@@ -20,10 +20,14 @@ import com.sun.jersey.api.json.JSONConfiguration;
  */
 public class SearchClient implements SearchService {
 
-	private static String SERVER = "http://localhost:8080/sild-search-web/search";
+	private static String SERVER = "http://localhost:8080/sild-search-web/rest/search";
 
 	@Override
 	public SearchResult search(String searchTerm) {
+
+		Builder builder = getBuilder();
+		builder.
+
 		ClientResponse response = getBuilder().get(ClientResponse.class);
 		evaluateResponse(response);
 		return response.getEntity(SearchResult.class);
@@ -40,6 +44,14 @@ public class SearchClient implements SearchService {
 	private Builder getBuilder() {
 		ClientConfig clientConfig = new DefaultClientConfig();
 		clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
+		
+		clientConfig.getFeatures().
+		
+		
+		
+		
+		
+		
 		return Client.create(clientConfig).resource(SERVER).accept(MediaType.APPLICATION_JSON);
 	}
 
