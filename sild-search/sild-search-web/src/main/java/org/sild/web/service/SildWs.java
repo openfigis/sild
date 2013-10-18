@@ -27,6 +27,7 @@ public class SildWs {
 	@GET
 	@Path("search")
 	@Produces(MediaType.APPLICATION_JSON)
+	// @CrossOriginResourceSharing(allowAllOrigins = true)
 	public SearchResult search(@QueryParam("searchTerm") String searchTerm) {
 		System.out.println("hitting SildWs search searchTerm!!! with searchTerm:" + searchTerm);
 
